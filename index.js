@@ -18,6 +18,10 @@ const client = new Client({
   partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 });
 
+client.on('ready', async () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
 // Retrieve all event files
 const eventFiles = fs.readdirSync('./events').filter((file) => file.endsWith('.js'));
 
@@ -44,14 +48,5 @@ for (const file of commandFiles) {
     );
   }
 }
-
-// notification when the bot is ready
-client.on('ready', async () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-  // Checks server name who add the bot
-  client.guilds.cache.forEach((guild) => {
-    console.log(guild.name, guild.id);
-  });
-});
 
 client.login(token);

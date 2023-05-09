@@ -3,7 +3,6 @@ const { botID } = require('../config.json');
 
 module.exports = {
   data: new SlashCommandBuilder().setName('watchbots').setDescription('Show watched bots'),
-  // .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
 
   async execute(interaction) {
     const botUsernames = botID
