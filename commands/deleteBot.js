@@ -8,7 +8,7 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
 
   async execute(interaction) {
-    botID.splice(3, botID.length);
+    botID.splice(2, botID.length);
     await interaction.reply({
       content: `All customs bots are removed`,
       ephemeral: true,
