@@ -2,7 +2,9 @@ const { SlashCommandBuilder } = require('discord.js');
 const { botID } = require('../config.json');
 
 module.exports = {
-  data: new SlashCommandBuilder().setName('watchbots').setDescription('Show watched bots'),
+  data: new SlashCommandBuilder()
+    .setName('watchbots')
+    .setDescription('Show watched bots'),
 
   async execute(interaction) {
     const botUsernames = botID
